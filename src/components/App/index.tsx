@@ -6,7 +6,7 @@ import Shares from '../Shares';
 const App = () => {
   return (
     <div className="App">
-      <h1>Sparerpauschbetrag durch ETF-Verkauf ausnutzen</h1>
+      <h1>Sparer-Pauschbetrag durch ETF-Verkauf ausnutzen</h1>
       <TaxFreeAmount />
       <Shares />
     </div>
