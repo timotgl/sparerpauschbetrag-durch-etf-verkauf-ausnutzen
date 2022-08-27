@@ -101,6 +101,7 @@ export const optimalAmountOfSharesToSell = (state: RootState) => {
     }
   }
 
+  /*
   console.log(
     'You should sell',
     numSharesToSell,
@@ -112,6 +113,7 @@ export const optimalAmountOfSharesToSell = (state: RootState) => {
   );
 
   console.log(fractionedSharesWarning);
+  */
 
   return numSharesToSell;
 };

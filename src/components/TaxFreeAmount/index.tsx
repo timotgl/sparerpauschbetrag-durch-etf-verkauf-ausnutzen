@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import {
@@ -8,22 +9,24 @@ import {
 } from '../../redux/taxes/reducer';
 import classNames from './TaxFreeAmount.module.css';
 
-const defaultValues = [
-  {
-    value: TAX_FREE_AMOUNT_SINGLE,
-    label: 'Einzelveranlagung/Single',
-  },
-  {
-    value: TAX_FREE_AMOUNT_DOUBLE,
-    label: 'Zusammenveranlagte Personen',
-  },
-];
-
 const currentYear = new Date().getFullYear();
 const isValid = (changedValue: number) =>
   changedValue >= 0 && changedValue <= TAX_FREE_AMOUNT_DOUBLE;
 
 const TaxFreeAmount = () => {
+  const { t } = useTranslation();
+
+  const defaultValues = [
+    {
+      value: TAX_FREE_AMOUNT_SINGLE,
+      label: t('taxes.tax_free_amount.default_values.single'),
+    },
+    {
+      value: TAX_FREE_AMOUNT_DOUBLE,
+      label: t('taxes.tax_free_amount.default_values.double'),
+    },
+  ];
+
   const amount = useAppSelector((state) => state.taxes.taxFreeAmount);
   const dispatch = useAppDispatch();
   const changeValue = (changeEvent: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +38,7 @@ const TaxFreeAmount = () => {
   return (
     <div>
       <p>
-        Verbleibender Steuerfreibetrag für {currentYear} in EUR:&nbsp;
+        {t('taxes.tax_free_amount.remaining_amount', { currentYear })}&nbsp;
         <input
           className={classNames.Input}
           type="number"
@@ -44,7 +47,7 @@ const TaxFreeAmount = () => {
         />
       </p>
       <p className={classNames.ResetButtonContainer}>
-        Zurücksetzen auf:&nbsp;
+        {t('taxes.tax_free_amount.reset')}&nbsp;
         {defaultValues.map(({ value, label }) => (
           <button
             key={value}
@@ -60,7 +63,7 @@ const TaxFreeAmount = () => {
         ))}
         &nbsp;{' '}
         <a href="https://de.wikipedia.org/wiki/Sparer-Pauschbetrag">
-          Definition auf Wikipedia
+          {t('taxes.tax_free_amount.definition_link_caption')}
         </a>
       </p>
     </div>

@@ -1,0 +1,40 @@
+{
+  "app": {
+    "title": "Optimally capitalize on tax-free amount by selling shares"
+  },
+  "switch_language": {
+    "prompt": "Language:",
+    "locales": {
+      "en-US": "English",
+      "de-DE": "German"
+    }
+  },
+  "taxes": {
+    "tax_free_amount": {
+      "reset": "Reset to:",
+      "remaining_amount": "Remaining tax-free amount for {{currentYear}} in EUR:",
+      "default_values": {
+        "single": "assessed as single person",
+        "double": "multiple people assessed together"
+      },
+      "definition_link_caption": "Definition on Wikipedia (german)"
+    }
+  },
+  "shares": {
+    "heading": "Shares in depot",
+    "before_sale": "Before sale:",
+    "total_value": "shares with a total value of",
+    "trade_date": "Trade date",
+    "amount": "Amount of shares",
+    "execution_rate": "Execution rate",
+    "sale_profit": "Sale profit"
+  },
+  "prices": {
+    "current_bid_price": "Current price:"
+  },
+  "sale_simulation": {
+    "heading": "Sale simulation",
+    "optimal_profit": "Optimal profit:",
+    "optimal_amount_shares": "Optimal amount of shares to sell:"
+  }
+}

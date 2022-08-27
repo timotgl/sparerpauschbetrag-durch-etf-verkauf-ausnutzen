@@ -14,4 +14,12 @@
 
 .ResetButton {
   font-size: 10px;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+  border-radius: 4px;
+}
+
+.ResetButton:not(:last-child) {
+  margin-right: 10px;
 }

@@ -1,0 +1,40 @@
+{
+  "app": {
+    "title": "Sparer-Pauschbetrag durch Wertpapierverkauf optimal ausnutzen"
+  },
+  "switch_language": {
+    "prompt": "Sprache:",
+    "locales": {
+      "en-US": "Englisch",
+      "de-DE": "Deutsch"
+    }
+  },
+  "taxes": {
+    "tax_free_amount": {
+      "reset": "Zurücksetzen auf:",
+      "remaining_amount": "Verbleibender Steuerfreibetrag für {{currentYear}} in EUR:",
+      "default_values": {
+        "single": "Einzelveranlagung/Single",
+        "double": "Zusammenveranlagte Personen"
+      },
+      "definition_link_caption": "Definition auf Wikipedia"
+    }
+  },
+  "shares": {
+    "heading": "Anteile im Depot",
+    "before_sale": "Vor Verkauf:",
+    "total_value": "Anteile im Wert von",
+    "trade_date": "Schlusstag",
+    "amount": "Anzahl Anteile",
+    "execution_rate": "Ausführungskurs",
+    "sale_profit": "Verkaufsgewinn"
+  },
+  "prices": {
+    "current_bid_price": "Aktueller Preis:"
+  },
+  "sale_simulation": {
+    "heading": "Simulation Verkauf",
+    "optimal_profit": "Zu erzielender Gewinn:",
+    "optimal_amount_shares": "Optimale Anzahl zu verkaufende Anteile:"
+  }
+}

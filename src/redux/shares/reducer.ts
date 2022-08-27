@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import initialStateBeforeJSON from './initialState.json';
-console.log(initialStateBeforeJSON);
 
 export interface Share {
   date: string;
