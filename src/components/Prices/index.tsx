@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { useAppSelector } from '../../redux/hooks';
 
 const Prices = () => {
   const currentBidPrice = useAppSelector(

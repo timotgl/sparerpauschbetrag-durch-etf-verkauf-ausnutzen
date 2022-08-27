@@ -5,7 +5,6 @@ import {
   getOptimalProfit,
   optimalAmountOfSharesToSell,
 } from '../../redux/selectors';
-import { Share } from '../../redux/shares/reducer';
 
 const SaleSimulation = () => {
   const optimalProfit = useAppSelector(getOptimalProfit);
