@@ -35,6 +35,7 @@
   "sale_simulation": {
     "heading": "Sale simulation",
     "optimal_profit": "Optimal profit:",
-    "optimal_amount_shares": "Optimal amount of shares to sell:"
+    "optimal_amount_shares": "Optimal amount of shares to sell:",
+    "sale_value": "Sale value of optimal amount:"
   }
 }

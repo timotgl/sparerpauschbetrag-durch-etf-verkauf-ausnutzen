@@ -117,3 +117,8 @@ export const optimalAmountOfSharesToSell = (state: RootState) => {
 
   return numSharesToSell;
 };
+
+export const optimalAmountSaleValue = (state: RootState) => {
+  const optimalAmount = optimalAmountOfSharesToSell(state);
+  return state.prices.currentBidPrice * optimalAmount;
+};

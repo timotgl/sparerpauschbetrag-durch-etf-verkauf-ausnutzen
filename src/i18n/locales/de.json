@@ -35,6 +35,7 @@
   "sale_simulation": {
     "heading": "Simulation Verkauf",
     "optimal_profit": "Zu erzielender Gewinn:",
-    "optimal_amount_shares": "Optimale Anzahl zu verkaufende Anteile:"
+    "optimal_amount_shares": "Optimale Anzahl zu verkaufende Anteile:",
+    "sale_value": "Verkaufswert der optimalen Anzahl:"
   }
 }
