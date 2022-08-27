@@ -1,7 +1,7 @@
-import { createReducer } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-const TAX_FREE_AMOUNT_SINGLE = 801;
-const TAX_FREE_AMOUNT_DOUBLE = 1602;
+export const TAX_FREE_AMOUNT_SINGLE = 801;
+export const TAX_FREE_AMOUNT_DOUBLE = 1602;
 
 interface TaxesState {
   taxFreeAmount: number;
@@ -11,10 +11,21 @@ const initialState: TaxesState = {
   taxFreeAmount: TAX_FREE_AMOUNT_SINGLE,
 };
 
-const taxesReducer = createReducer(initialState, (builder) => {
-  builder.addCase('taxes/setTaxFreeAmount', (state, action) => {
-    state.taxFreeAmount = TAX_FREE_AMOUNT_DOUBLE;
-  });
+const taxesSlice = createSlice({
+  name: 'taxes',
+  initialState,
+  reducers: {
+    set(state, action) {
+      state.taxFreeAmount = action.payload;
+    },
+    resetSingle(state) {
+      state.taxFreeAmount = TAX_FREE_AMOUNT_SINGLE;
+    },
+    resetDouble(state) {
+      state.taxFreeAmount = TAX_FREE_AMOUNT_DOUBLE
+    }
+  }
 });
 
-export default taxesReducer;
+export const actions = taxesSlice.actions
+export default taxesSlice.reducer
