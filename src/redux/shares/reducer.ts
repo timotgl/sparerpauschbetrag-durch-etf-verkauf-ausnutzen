@@ -1,6 +1,10 @@
-import { createReducer } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-interface Share {
+import initialStateBeforeJSON from './initialState.json';
+console.log(initialStateBeforeJSON);
+
+export interface Share {
+  date: string;
   amount: number;
   price: number;
 }
@@ -11,18 +15,19 @@ interface SharesState {
 }
 
 const initialState: SharesState = {
-  before: [
-    { amount: 30.0, price: 81.67 },
-    { amount: 6.147, price: 81.34 },
-    { amount: 119.0, price: 83.99 },
-  ],
+  before: initialStateBeforeJSON,
   after: [],
 };
 
-const sharesReducer = createReducer(initialState, (builder) => {
-  builder.addCase('shares/add', (state, action) => {
-    state.before.push({ amount: 30, price: 81.67 });
-  });
+const sharesSlice = createSlice({
+  name: 'shares',
+  initialState,
+  reducers: {
+    add(state) {
+      state.before.push({ date: '2022-08-27', amount: 30, price: 81.67 });
+    },
+  },
 });
 
-export default sharesReducer;
+export const actions = sharesSlice.actions;
+export default sharesSlice.reducer;

@@ -1,11 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import taxesReducer from './taxes/reducer';
+
+import pricesReducer from './prices/reducer';
 import sharesReducer from './shares/reducer';
+import taxesReducer from './taxes/reducer';
 
 export const store = configureStore({
   reducer: {
-    taxes: taxesReducer,
+    prices: pricesReducer,
     shares: sharesReducer,
+    taxes: taxesReducer,
   },
 });
 
