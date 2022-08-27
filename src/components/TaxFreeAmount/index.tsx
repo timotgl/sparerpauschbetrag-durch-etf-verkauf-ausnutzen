@@ -11,7 +11,7 @@ import classNames from './TaxFreeAmount.module.css';
 const defaultValues = [
   {
     value: TAX_FREE_AMOUNT_SINGLE,
-    label: 'Einzelveranlagung (Single)',
+    label: 'Einzelveranlagung/Single',
   },
   {
     value: TAX_FREE_AMOUNT_DOUBLE,
@@ -34,12 +34,6 @@ const TaxFreeAmount = () => {
   };
   return (
     <div>
-      <h2>TaxFreeAmount</h2>
-      <p>
-        <a href="https://de.wikipedia.org/wiki/Sparer-Pauschbetrag">
-          Definition on Wikipedia (german)
-        </a>
-      </p>
       <p>
         Verbleibender Steuerfreibetrag für {currentYear} in EUR:&nbsp;
         <input
@@ -48,18 +42,26 @@ const TaxFreeAmount = () => {
           value={amount}
           onChange={changeValue}
         />
+      </p>
+      <p className={classNames.ResetButtonContainer}>
+        Zurücksetzen auf:&nbsp;
         {defaultValues.map(({ value, label }) => (
           <button
             key={value}
+            className={classNames.ResetButton}
             onClick={() =>
               changeValue({
                 currentTarget: { value: String(value) },
               } as React.ChangeEvent<HTMLInputElement>)
             }
           >
-            Auf EUR {value} zurücksetzen ({label})
+            EUR {value} ({label})
           </button>
         ))}
+        &nbsp;{' '}
+        <a href="https://de.wikipedia.org/wiki/Sparer-Pauschbetrag">
+          Definition auf Wikipedia
+        </a>
       </p>
     </div>
   );
