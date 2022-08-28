@@ -23,7 +23,7 @@ const Shares = () => {
     (state) => state.prices.currentBidPrice
   );
   const calculateGain = (share: Share): number =>
-    share.amount * currentBidPrice - share.amount * share.price;
+    share.amountPurchased * currentBidPrice - share.amountPurchased * share.price;
 
   return (
     <div>
@@ -37,10 +37,13 @@ const Shares = () => {
           <tr>
             <td>{t('shares.trade_date')}</td>
             <td className={cn(classNames.RightAlignedCell)}>
-              {t('shares.amount')}
+              {t('shares.amount_purchased')}
             </td>
             <td className={cn(classNames.RightAlignedCell)}>
               {t('shares.execution_rate')} EUR
+            </td>
+            <td className={cn(classNames.RightAlignedCell)}>
+              {t('shares.amount_sold')}
             </td>
             <td className={cn(classNames.RightAlignedCell)}>
               {t('shares.sale_profit')} EUR
@@ -52,10 +55,13 @@ const Shares = () => {
             <tr key={index}>
               <td>{day(share.date).format('YYYY-MM-DD')}</td>
               <td className={cn(classNames.RightAlignedCell)}>
-                {share.amount.toFixed(SHARE_AMOUNT_DIGITS)}
+                {share.amountPurchased.toFixed(SHARE_AMOUNT_DIGITS)}
               </td>
               <td className={cn(classNames.RightAlignedCell)}>
                 {share.price.toFixed(SHARE_PRICE_DIGITS)}
+              </td>
+              <td className={cn(classNames.RightAlignedCell)}>
+                {/* {share.amount.toFixed(SHARE_AMOUNT_DIGITS)} */}amount sold
               </td>
               <td className={cn(classNames.RightAlignedCell)}>
                 {calculateGain(share).toFixed(SHARE_PRICE_DIGITS)}

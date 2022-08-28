@@ -14,8 +14,8 @@ const App = () => {
       <SwitchLanguage />
       <h1>{t('app.title')}</h1>
       <TaxFreeAmount />
-      <Shares />
       <Prices />
+      <Shares />
       <SaleSimulation />
     </div>
   );

@@ -25,12 +25,13 @@
     "before_sale": "Vor Verkauf:",
     "total_value": "Anteile im Wert von",
     "trade_date": "Schlusstag",
-    "amount": "Anzahl Anteile",
+    "amount_purchased": "Anzahl Anteile gekauft",
+    "amount_sold": "Anzahl Anteile verkauft",
     "execution_rate": "Ausführungskurs",
     "sale_profit": "Verkaufsgewinn"
   },
   "prices": {
-    "current_bid_price": "Aktueller Preis:"
+    "current_bid_price": "Aktueller Preis EUR:"
   },
   "sale_simulation": {
     "heading": "Simulation Verkauf",

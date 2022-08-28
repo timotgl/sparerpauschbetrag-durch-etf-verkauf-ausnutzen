@@ -6,11 +6,11 @@ export const getOptimalProfit = (state: RootState) =>
   state.taxes.taxFreeAmount / TAX_RELEVANT_FACTOR;
 
 export const sumSharesBeforeSale = (state: RootState) =>
-  state.shares.before.reduce((sum, share) => sum + share.amount, 0);
+  state.shares.before.reduce((sum, share) => sum + share.amountPurchased, 0);
 
 export const totalSaleValueSharesBefore = (state: RootState) =>
   state.shares.before.reduce((totalValue, share) => {
-    return totalValue + share.amount * state.prices.currentBidPrice;
+    return totalValue + share.amountPurchased * state.prices.currentBidPrice;
   }, 0);
 
 export const optimalAmountOfSharesToSell = (state: RootState) => {
@@ -23,7 +23,7 @@ export const optimalAmountOfSharesToSell = (state: RootState) => {
   // Amount of shares I own in chronologically ascending order.
   // (first element = oldest shares)
   const shares = state.shares.before.map((share) => [
-    share.amount,
+    share.amountPurchased,
     share.price,
   ]);
 

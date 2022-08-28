@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useAppSelector } from '../../redux/hooks';
+import classNames from './Prices.module.css';
 
 const Prices = () => {
   const [t] = useTranslation();
@@ -10,9 +11,15 @@ const Prices = () => {
   );
   return (
     <div>
-      <h2>
-        {t('prices.current_bid_price')} EUR {currentBidPrice.toFixed(2)}
-      </h2>
+      <p>
+        {t('prices.current_bid_price')}{' '}
+        <input
+          className={classNames.Input}
+          type="text"
+          value={currentBidPrice.toFixed(2)}
+          readOnly
+        />
+      </p>
     </div>
   );
 };

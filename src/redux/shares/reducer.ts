@@ -4,7 +4,7 @@ import initialStateBeforeJSON from './initialState.json';
 
 export interface Share {
   date: string;
-  amount: number;
+  amountPurchased: number;
   price: number;
 }
 
@@ -23,7 +23,7 @@ const sharesSlice = createSlice({
   initialState,
   reducers: {
     add(state) {
-      state.before.push({ date: '2022-08-27', amount: 30, price: 81.67 });
+      state.before.push({ date: '2022-08-27', amountPurchased: 30, price: 81.67 });
     },
   },
 });

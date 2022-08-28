@@ -25,12 +25,13 @@
     "before_sale": "Before sale:",
     "total_value": "shares with a total value of",
     "trade_date": "Trade date",
-    "amount": "Amount of shares",
+    "amount_purchased": "Amount of shares purchased",
+    "amount_sold": "Amount of shares sold",
     "execution_rate": "Execution rate",
     "sale_profit": "Sale profit"
   },
   "prices": {
-    "current_bid_price": "Current price:"
+    "current_bid_price": "Current price EUR:"
   },
   "sale_simulation": {
     "heading": "Sale simulation",
