@@ -12,7 +12,7 @@
 }
 
 .Table td {
-  padding: 4px;
+  padding: 2px 8px;
 }
 
 .Table tbody tr:not(:last-child) td {

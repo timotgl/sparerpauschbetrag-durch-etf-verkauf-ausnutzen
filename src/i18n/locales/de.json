@@ -22,16 +22,16 @@
   },
   "shares": {
     "heading": "Anteile im Depot",
-    "before_sale": "Vor Verkauf:",
     "total_value": "Anteile im Wert von",
     "trade_date": "Schlusstag",
-    "amount_purchased": "Anzahl Anteile gekauft",
-    "amount_sold": "Anzahl Anteile verkauft",
+    "amount_purchased": "Anteile gekauft",
+    "amount_sold": "verkauft",
+    "amount_left": "verbleibend",
     "execution_rate": "Ausführungskurs",
-    "sale_profit": "Verkaufsgewinn"
+    "simulation_outcome": "Ergebnis Simulation"
   },
   "prices": {
-    "current_bid_price": "Aktueller Preis EUR:"
+    "current_bid_price": "Aktueller Wertpapierpreis EUR:"
   },
   "sale_simulation": {
     "heading": "Simulation Verkauf",

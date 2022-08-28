@@ -3,15 +3,15 @@ import { useTranslation } from 'react-i18next';
 
 import { useAppSelector } from '../../redux/hooks';
 import {
-  getOptimalProfit,
-  optimalAmountOfSharesToSell,
+  selectOptimalProfit,
+  selectSaleSimulation,
   optimalAmountSaleValue,
 } from '../../redux/selectors';
 
 const SaleSimulation = () => {
   const [t] = useTranslation();
-  const optimalProfit = useAppSelector(getOptimalProfit);
-  const optimalAmount = useAppSelector(optimalAmountOfSharesToSell);
+  const optimalProfit = useAppSelector(selectOptimalProfit);
+  const saleSimulationResult = useAppSelector(selectSaleSimulation);
   const saleValue = useAppSelector(optimalAmountSaleValue);
   return (
     <div>
@@ -20,7 +20,7 @@ const SaleSimulation = () => {
         {t('sale_simulation.optimal_profit')} EUR {optimalProfit.toFixed(2)}
       </p>
       <p>
-        {t('sale_simulation.optimal_amount_shares')} {optimalAmount}
+        {t('sale_simulation.optimal_amount_shares')} {saleSimulationResult.numSharesToSell}
       </p>
       <p>
         {t('sale_simulation.sale_value')} EUR {saleValue.toFixed(2)}
