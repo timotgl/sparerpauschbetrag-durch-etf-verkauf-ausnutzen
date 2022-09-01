@@ -1,15 +1,18 @@
 import i18n, { InitOptions } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import locale_de_DE from './locales/de.json';
-import locale_en_US from './locales/en.json';
+import locale_de_DE_translations from './locales/de.json';
+import locale_en_US_translatons from './locales/en.json';
 
-export const locales = ['en-US', 'de-DE'];
+export const locale_de_DE = 'de-DE';
+export const locale_en_US = 'en-US';
+
+export const locales = [locale_en_US, locale_de_DE];
 
 const options: InitOptions = {
   resources: {
-    'en-US': { translation: locale_en_US },
-    'de-DE': { translation: locale_de_DE },
+    'en-US': { translation: locale_en_US_translatons },
+    'de-DE': { translation: locale_de_DE_translations },
   },
   lng: 'en-US',
   fallbackLng: false,

@@ -14,8 +14,8 @@
       "reset": "Zurücksetzen auf:",
       "remaining_amount": "Verbleibender Steuerfreibetrag für {{currentYear}} in EUR:",
       "default_values": {
-        "single": "Einzelveranlagung/Single",
-        "double": "Zusammenveranlagte Personen"
+        "single": "Single",
+        "double": "Ehepaar"
       },
       "definition_link_caption": "Definition auf Wikipedia"
     }
@@ -34,9 +34,11 @@
     "current_bid_price": "Aktueller Wertpapierpreis EUR:"
   },
   "sale_simulation": {
-    "heading": "Simulation Verkauf",
-    "optimal_profit": "Zu erzielender Gewinn:",
+    "heading": "FIFO Simulation Verkauf",
+    "optimal_profit": "Zu erzielender, optimaler Gewinn:",
     "optimal_amount_shares": "Optimale Anzahl zu verkaufende Anteile:",
-    "sale_value": "Verkaufswert der optimalen Anzahl:"
+    "sale_value": "Verkaufswert der optimalen Anzahl:",
+    "actual_profit": "Tatsächlich erzielter Gewinn:",
+    "difference_to_optimal": "Differenz zum optimalen Gewinn:"
   }
 }

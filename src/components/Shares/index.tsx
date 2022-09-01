@@ -4,14 +4,18 @@ import day from 'dayjs';
 import { useTranslation } from 'react-i18next';
 
 import { useAppSelector } from '../../redux/hooks';
+import {
+  selectSaleSimulation,
+  selectCurrentBidPrice,
+} from '../../redux/selectors';
+import { SHARE_DECIMAL_PLACES, CURRENCY_DECIMAL_PLACES } from '../../constants';
 import classNames from './Shares.module.css';
-
-const SHARE_AMOUNT_DIGITS = 4;
-const SHARE_PRICE_DIGITS = 2;
 
 const Shares = () => {
   const [t] = useTranslation();
   const sharesBefore = useAppSelector((state) => state.shares.before);
+  const currentBidPrice = useAppSelector(selectCurrentBidPrice);
+  const saleSimulation = useAppSelector(selectSaleSimulation);
 
   return (
     <div>
@@ -32,31 +36,42 @@ const Shares = () => {
             <td className={cn(classNames.RightAlignedCell)}>
               {t('shares.amount_left')}
             </td>
-            <td className={cn(classNames.RightAlignedCell)}>
-              {t('shares.simulation_outcome')}
-            </td>
+            <td>{t('shares.simulation_outcome')}</td>
           </tr>
         </thead>
         <tbody>
           {sharesBefore.map((share, index) => (
-            <tr key={index}>
+            <tr
+              key={index}
+              className={cn({
+                [classNames.FullySoldShareRow]:
+                  share.amountPurchased - share.amountSold === 0,
+              })}
+            >
               <td>{day(share.date).format('YYYY-MM-DD')}</td>
-              <td className={cn(classNames.RightAlignedCell)}>
-                {share.price.toFixed(SHARE_PRICE_DIGITS)}
+              <td
+                className={cn(classNames.RightAlignedCell, {
+                  [classNames.ProfitableShareCell]:
+                    currentBidPrice > share.price,
+                  [classNames.UnprofitableShareCell]:
+                    currentBidPrice <= share.price,
+                })}
+              >
+                {share.price.toFixed(CURRENCY_DECIMAL_PLACES)}
               </td>
               <td className={cn(classNames.RightAlignedCell)}>
-                {share.amountPurchased.toFixed(SHARE_AMOUNT_DIGITS)}
+                {share.amountPurchased.toFixed(SHARE_DECIMAL_PLACES)}
               </td>
               <td className={cn(classNames.RightAlignedCell)}>
-                {share.amountSold.toFixed(SHARE_AMOUNT_DIGITS)}
+                {share.amountSold.toFixed(SHARE_DECIMAL_PLACES)}
               </td>
               <td className={cn(classNames.RightAlignedCell)}>
                 {(share.amountPurchased - share.amountSold).toFixed(
-                  SHARE_AMOUNT_DIGITS
+                  SHARE_DECIMAL_PLACES
                 )}
               </td>
-              <td className={cn(classNames.RightAlignedCell)}>
-                TODO: simulation_outcome
+              <td className={cn(classNames.OutcomeCell)}>
+                {saleSimulation.outcomes[index]}
               </td>
             </tr>
           ))}

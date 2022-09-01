@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const DEFAULT_BID_PRICE = 99.56;
+export const DEFAULT_BID_PRICE = 96;
 
 interface PricesState {
   currentBidPrice: number;

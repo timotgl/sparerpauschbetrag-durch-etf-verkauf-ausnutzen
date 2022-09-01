@@ -45,26 +45,22 @@ const TaxFreeAmount = () => {
           value={amount}
           onChange={changeValue}
         />
-      </p>
-      <p className={classNames.ResetButtonContainer}>
-        {t('taxes.tax_free_amount.reset')}&nbsp;
-        {defaultValues.map(({ value, label }) => (
-          <button
-            key={value}
-            className={classNames.ResetButton}
-            onClick={() =>
-              changeValue({
-                currentTarget: { value: String(value) },
-              } as React.ChangeEvent<HTMLInputElement>)
-            }
-          >
-            EUR {value} ({label})
-          </button>
-        ))}
-        &nbsp;{' '}
-        <a href="https://de.wikipedia.org/wiki/Sparer-Pauschbetrag">
-          {t('taxes.tax_free_amount.definition_link_caption')}
-        </a>
+        <span className={classNames.ResetButtonContainer}>
+          {t('taxes.tax_free_amount.reset')}&nbsp;
+          {defaultValues.map(({ value, label }) => (
+            <button
+              key={value}
+              className={classNames.ResetButton}
+              onClick={() =>
+                changeValue({
+                  currentTarget: { value: String(value) },
+                } as React.ChangeEvent<HTMLInputElement>)
+              }
+            >
+              EUR {value} ({label})
+            </button>
+          ))}
+        </span>
       </p>
     </div>
   );

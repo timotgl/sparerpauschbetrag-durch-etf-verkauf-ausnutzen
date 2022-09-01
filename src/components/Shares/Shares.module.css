@@ -23,6 +23,22 @@
   background-color: rgb(59, 59, 59);
 }
 
+.FullySoldShareRow {
+  opacity: 0.3;
+}
+
 .RightAlignedCell {
   text-align: right;
+}
+
+.OutcomeCell {
+  font-size: 10px;
+}
+
+.ProfitableShareCell {
+  color: #00d200;
+}
+
+.UnprofitableShareCell {
+  color: #ff4b4b;
 }

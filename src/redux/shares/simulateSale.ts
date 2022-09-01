@@ -1,9 +1,11 @@
 import { Share } from './reducer';
+import { SHARE_DECIMAL_PLACES, CURRENCY_DECIMAL_PLACES } from '../../constants';
 
 export interface SaleSimulationResult {
   numSharesToSell: number;
   actualProfit: number;
   fractionedSharesWarning: string;
+  outcomes: Array<string>;
 }
 
 const simulateSale = (
@@ -17,10 +19,15 @@ const simulateSale = (
     share.amountPurchased - share.amountSold,
     share.price,
   ]);
+  const numShares = shares.reduce((num, share) => num + share[0], 0);
+  console.log('numShares:', numShares);
+
+  let outcomes: Array<string> = [];
 
   const simulateIncrementalSale = (numSharesSold: number) => {
     // Iterate through elements of shares array
     let sharesIndex = 0;
+    outcomes = [];
 
     // Total profit (in EUR) earned when numSharesSold is sold at bidPrice.
     let totalProfit = 0;
@@ -29,7 +36,6 @@ const simulateSale = (
     let sharesSold = numSharesSold;
 
     while (sharesSold > 0 && sharesIndex < shares.length) {
-      //console.log('--------------------------------------------------------------------');
       //console.log('Shares left to sell:', sharesSold);
 
       const [originalAmount, originalPrice] = shares[sharesIndex];
@@ -41,32 +47,33 @@ const simulateSale = (
           `Warning: The position with ${amount} ` +
           `shares bought at ${originalPrice} ` +
           `EUR will be reduced to ${Number(
-            (amount - sharesSold).toFixed(3)
+            (amount - sharesSold).toFixed(SHARE_DECIMAL_PLACES)
           )} shares.\n` +
           'Following FIFO, your next sale will start with this position.';
         amount = sharesSold;
       }
 
       const profit = Number(
-        (amount * bidPrice - amount * originalPrice).toFixed(2)
+        (amount * bidPrice - amount * originalPrice).toFixed(
+          CURRENCY_DECIMAL_PLACES
+        )
       );
-
-      /*
-      console.log(
-          'Selling', amount,
-          'ETF shares at', bidPrice,
-          'EUR per share results in a profit of', profit,
-          'EUR'
-      );
-      */
+      const outcomeMessage =
+        profit > 0
+          ? `${amount.toFixed(
+              SHARE_DECIMAL_PLACES
+            )} shares sold with a profit of EUR ${profit}. ${(
+              originalAmount - amount
+            ).toFixed(SHARE_DECIMAL_PLACES)} shares are left.`
+          : '';
+      outcomes.push(outcomeMessage);
 
       totalProfit += profit;
       sharesSold -= amount;
       sharesIndex += 1;
     }
 
-    totalProfit = Number(totalProfit.toFixed(2));
-    //console.log('--------------------------------------------------------------------');
+    totalProfit = Number(totalProfit.toFixed(CURRENCY_DECIMAL_PLACES));
     /*
     console.log(
         'Total profit:', totalProfit,
@@ -79,8 +86,9 @@ const simulateSale = (
   };
 
   let numSharesToSell = 0;
+  const numSharesSellable = Math.floor(numShares);
   let profit = 0;
-  while (true) {
+  while (numSharesToSell < numSharesSellable) {
     numSharesToSell += 1;
     profit = simulateIncrementalSale(numSharesToSell);
     if (profit >= optimalProfit) {
@@ -106,6 +114,7 @@ const simulateSale = (
     numSharesToSell,
     actualProfit: profit,
     fractionedSharesWarning,
+    outcomes,
   };
 };
 

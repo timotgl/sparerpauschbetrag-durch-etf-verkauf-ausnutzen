@@ -1,0 +1,2 @@
+export const SHARE_DECIMAL_PLACES = 4;
+export const CURRENCY_DECIMAL_PLACES = 2;

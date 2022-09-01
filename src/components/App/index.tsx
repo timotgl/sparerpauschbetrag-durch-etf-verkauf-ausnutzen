@@ -13,9 +13,9 @@ const App = () => {
     <div>
       <SwitchLanguage />
       <h1>{t('app.title')}</h1>
+      <Shares />
       <TaxFreeAmount />
       <Prices />
-      <Shares />
       <SaleSimulation />
     </div>
   );

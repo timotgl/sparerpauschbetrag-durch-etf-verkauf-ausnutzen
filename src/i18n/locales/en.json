@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "Optimally capitalize on tax-free amount by selling shares"
+    "title": "Optimally capitalize on tax-free allowance by selling shares"
   },
   "switch_language": {
     "prompt": "Language:",
@@ -12,10 +12,10 @@
   "taxes": {
     "tax_free_amount": {
       "reset": "Reset to:",
-      "remaining_amount": "Remaining tax-free amount for {{currentYear}} in EUR:",
+      "remaining_amount": "Remaining tax-free allowance for {{currentYear}} in EUR:",
       "default_values": {
-        "single": "assessed as single person",
-        "double": "multiple people assessed together"
+        "single": "single",
+        "double": "married couple"
       },
       "definition_link_caption": "Definition on Wikipedia (german)"
     }
@@ -34,9 +34,11 @@
     "current_bid_price": "Current share price EUR:"
   },
   "sale_simulation": {
-    "heading": "Sale simulation",
+    "heading": "FIFO Sale simulation",
     "optimal_profit": "Optimal profit:",
     "optimal_amount_shares": "Optimal amount of shares to sell:",
-    "sale_value": "Sale value of optimal amount:"
+    "sale_value": "Sale value of optimal amount:",
+    "actual_profit": "Actual profit:",
+    "difference_to_optimal": "Difference to optimal profit:"
   }
 }
