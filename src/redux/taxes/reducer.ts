@@ -1,31 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export const TAX_FREE_AMOUNT_SINGLE = 801;
-export const TAX_FREE_AMOUNT_DOUBLE = 1602;
+import { TAX_FREE_AMOUNT_SINGLE } from '../../constants';
 
 interface TaxesState {
   taxFreeAmount: number;
+  churchTaxRate: number;
 }
 
 const initialState: TaxesState = {
   taxFreeAmount: TAX_FREE_AMOUNT_SINGLE,
+  churchTaxRate: 0,
 };
 
 const taxesSlice = createSlice({
   name: 'taxes',
   initialState,
   reducers: {
-    set(state, action) {
+    setTaxFreeAmount(state, action) {
       state.taxFreeAmount = action.payload;
     },
-    resetSingle(state) {
-      state.taxFreeAmount = TAX_FREE_AMOUNT_SINGLE;
+    setChurchTaxRate(state, action) {
+      state.churchTaxRate = action.payload;
     },
-    resetDouble(state) {
-      state.taxFreeAmount = TAX_FREE_AMOUNT_DOUBLE
-    }
-  }
+  },
 });
 
-export const actions = taxesSlice.actions
-export default taxesSlice.reducer
+export const actions = taxesSlice.actions;
+export default taxesSlice.reducer;

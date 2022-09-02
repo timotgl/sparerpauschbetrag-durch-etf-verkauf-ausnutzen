@@ -18,6 +18,12 @@
         "double": "married couple"
       },
       "definition_link_caption": "Definition on Wikipedia (german)"
+    },
+    "church_tax": {
+      "label": "Church tax:",
+      "none": "None",
+      "other": "States other than Bavaria and Baden-Württemberg",
+      "bavaria": "Bavaria or Baden-Württemberg"
     }
   },
   "shares": {
@@ -34,11 +40,16 @@
     "current_bid_price": "Current share price EUR:"
   },
   "sale_simulation": {
-    "heading": "FIFO Sale simulation",
+    "heading": "FIFO sale and re-buy simulation",
     "optimal_profit": "Optimal profit:",
     "optimal_amount_shares": "Optimal amount of shares to sell:",
     "sale_value": "Sale value of optimal amount:",
     "actual_profit": "Actual profit:",
-    "difference_to_optimal": "Difference to optimal profit:"
+    "difference_to_optimal": "Difference to optimal profit:",
+    "tax_free_amount": {
+      "exhausted": "Tax-free allowance exhausted:",
+      "remaining": "Tax-free allowance remaining:"
+    },
+    "taxes_saved": "Taxes saved:"
   }
 }

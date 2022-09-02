@@ -4,7 +4,10 @@ import { RootState } from './store';
 import simulateSale from './shares/simulateSale';
 import { Share } from './shares/reducer';
 
-const TAX_RELEVANT_FACTOR = 0.7;
+export const TAX_RELEVANT_FACTOR = 0.7;
+
+export const selectTaxFreeAmount = (state: RootState): number =>
+  state.taxes.taxFreeAmount;
 
 /*
  * Optimal amount of profit (in EUR) to be gained from sale

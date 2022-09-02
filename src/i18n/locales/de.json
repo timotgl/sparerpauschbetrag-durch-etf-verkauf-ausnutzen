@@ -18,6 +18,12 @@
         "double": "Ehepaar"
       },
       "definition_link_caption": "Definition auf Wikipedia"
+    },
+    "church_tax": {
+      "label": "Kirchensteuer:",
+      "none": "Keine",
+      "other": "Bundesländer außer Bayern und Baden-Württemberg",
+      "bavaria": "Bayern oder Baden-Württemberg"
     }
   },
   "shares": {
@@ -34,11 +40,16 @@
     "current_bid_price": "Aktueller Wertpapierpreis EUR:"
   },
   "sale_simulation": {
-    "heading": "FIFO Simulation Verkauf",
+    "heading": "FIFO Simulation Verkauf und Wiedereinkauf",
     "optimal_profit": "Zu erzielender, optimaler Gewinn:",
     "optimal_amount_shares": "Optimale Anzahl zu verkaufende Anteile:",
     "sale_value": "Verkaufswert der optimalen Anzahl:",
     "actual_profit": "Tatsächlich erzielter Gewinn:",
-    "difference_to_optimal": "Differenz zum optimalen Gewinn:"
+    "difference_to_optimal": "Differenz zum optimalen Gewinn:",
+    "tax_free_amount": {
+      "exhausted": "Vom Steuerfreibetrag aufgebraucht:",
+      "remaining": "Vom Steuerfreibetrag noch verbleibend:"
+    },
+    "taxes_saved": "Steuern gespart:"
   }
 }

@@ -2,11 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { actions } from '../../redux/taxes/reducer';
 import {
   TAX_FREE_AMOUNT_SINGLE,
   TAX_FREE_AMOUNT_DOUBLE,
-  actions,
-} from '../../redux/taxes/reducer';
+} from '../../constants';
 import classNames from './TaxFreeAmount.module.css';
 
 const currentYear = new Date().getFullYear();
@@ -32,7 +32,7 @@ const TaxFreeAmount = () => {
   const changeValue = (changeEvent: React.ChangeEvent<HTMLInputElement>) => {
     const changedValue = parseInt(changeEvent.currentTarget.value, 10);
     if (isValid(changedValue)) {
-      dispatch(actions.set(changeEvent.currentTarget.value));
+      dispatch(actions.setTaxFreeAmount(changeEvent.currentTarget.value));
     }
   };
   return (
