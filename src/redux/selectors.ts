@@ -3,8 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from './store';
 import simulateSale from './shares/simulateSale';
 import { Share } from './shares/reducer';
-
-export const TAX_RELEVANT_FACTOR = 0.7;
+import { STOCKS_TAX_EXEMPTION_FACTOR } from '../constants';
 
 export const selectTaxFreeAmount = (state: RootState): number =>
   state.taxes.taxFreeAmount;
@@ -13,7 +12,7 @@ export const selectTaxFreeAmount = (state: RootState): number =>
  * Optimal amount of profit (in EUR) to be gained from sale
  */
 export const selectOptimalProfit = (state: RootState): number =>
-  state.taxes.taxFreeAmount / TAX_RELEVANT_FACTOR;
+  state.taxes.taxFreeAmount / STOCKS_TAX_EXEMPTION_FACTOR;
 
 export const selectCurrentBidPrice = (state: RootState): number =>
   state.prices.currentBidPrice;

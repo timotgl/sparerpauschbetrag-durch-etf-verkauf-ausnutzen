@@ -8,8 +8,10 @@ import {
   optimalAmountSaleValue,
   selectTaxFreeAmount,
 } from '../../redux/selectors';
-import { CURRENCY_DECIMAL_PLACES } from '../../constants';
-import { TAX_RELEVANT_FACTOR } from '../../redux/selectors';
+import {
+  CURRENCY_DECIMAL_PLACES,
+  STOCKS_TAX_EXEMPTION_FACTOR,
+} from '../../constants';
 import { taxCapitalYields } from '../../utils';
 
 const SaleSimulation = () => {
@@ -20,7 +22,7 @@ const SaleSimulation = () => {
   const saleSimulationResult = useAppSelector(selectSaleSimulation);
   const saleValue = useAppSelector(optimalAmountSaleValue);
   const taxFreeAmountExhausted =
-    saleSimulationResult.actualProfit * TAX_RELEVANT_FACTOR;
+    saleSimulationResult.actualProfit * STOCKS_TAX_EXEMPTION_FACTOR;
   return (
     <div>
       <h2>{t('sale_simulation.heading')}</h2>
@@ -50,22 +52,23 @@ const SaleSimulation = () => {
       </p>
       <p>
         {t('sale_simulation.tax_free_amount.exhausted')} EUR{' '}
-        {(saleSimulationResult.actualProfit * TAX_RELEVANT_FACTOR).toFixed(
-          CURRENCY_DECIMAL_PLACES
-        )}
+        {(
+          saleSimulationResult.actualProfit * STOCKS_TAX_EXEMPTION_FACTOR
+        ).toFixed(CURRENCY_DECIMAL_PLACES)}
       </p>
       <p>
         {t('sale_simulation.tax_free_amount.remaining')} EUR{' '}
         {(
           taxFreeAmount -
-          saleSimulationResult.actualProfit * TAX_RELEVANT_FACTOR
+          saleSimulationResult.actualProfit * STOCKS_TAX_EXEMPTION_FACTOR
         ).toFixed(CURRENCY_DECIMAL_PLACES)}
       </p>
       <p>
         {t('sale_simulation.taxes_saved')} EUR{' '}
         {taxCapitalYields(taxFreeAmountExhausted, churchTaxRate).toFixed(
           CURRENCY_DECIMAL_PLACES
-        )}
+        )}<br />
+        <small>{t('sale_simulation.taxes_saved_disclaimer')}</small>
       </p>
     </div>
   );

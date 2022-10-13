@@ -50,6 +50,7 @@
       "exhausted": "Tax-free allowance exhausted:",
       "remaining": "Tax-free allowance remaining:"
     },
-    "taxes_saved": "Taxes saved:"
+    "taxes_saved": "Taxes saved*:",
+    "taxes_saved_disclaimer": "*Assuming that capital yields tax from the year 2022 still applies during the payout phase."
   }
 }

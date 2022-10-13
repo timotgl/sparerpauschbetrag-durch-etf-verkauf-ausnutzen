@@ -5,6 +5,18 @@ export const CURRENCY_DECIMAL_PLACES = 2;
 export const TAX_FREE_AMOUNT_SINGLE = 801;
 export const TAX_FREE_AMOUNT_DOUBLE = 1602;
 
+/*
+ * Capital yields tax only applies to a certain percentage of the profits from
+ * stocks-based capital.
+ *
+ * "Steuerfrei sind bei in Aktienfonds investierten Privatanlegern, Lebens- und
+ * Krankenversicherungsunternehmen und bei Fondsanteile im Handelsbuchbestand
+ * haltenden Kreditinstituten 30 % der Erträge (Aktienteilfreistellung)".
+ *
+ * Source: https://de.wikipedia.org/wiki/Investmentsteuergesetz_(Deutschland)#Investmentsteuergesetz_ab_dem_1._Januar_2018_(Art._1_G._vom_19._Juli_2016)
+ */
+export const STOCKS_TAX_EXEMPTION_FACTOR = 0.7;
+
 // https://de.wikipedia.org/wiki/Kapitalertragsteuer_(Deutschland)#Bemessung_der_Kapitalertragsteuer
 export const CAPITAL_YIELDS_TAX_RATE = 0.25;
 export const SOLIDARITY_TAX_RATE = 0.055;
