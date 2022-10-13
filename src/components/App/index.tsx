@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import SwitchLanguage from '../SwitchLanguage';
+import Header from '../Header';
 import TaxFreeAmount from '../TaxFreeAmount';
 import ChurchTax from '../ChurchTax';
 import Shares from '../Shares';
@@ -12,7 +12,7 @@ const App = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <SwitchLanguage />
+      <Header />
       <h1>{t('app.title')}</h1>
       <Shares />
       <TaxFreeAmount />
