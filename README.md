@@ -4,7 +4,7 @@ Or in English: Optimally capitalize on tax-free allowance by selling shares.
 
 ![Screenshot of app](public/screenshot.png 'Screenshot of app')
 
-A React app that calculates how many shares (of stocks, ETFs, etc.) you need to sell to take advantage of the [tax free amount for capital gains](https://de.wikipedia.org/wiki/Sparer-Pauschbetrag) as regulated in the german income tax law.
+A React app that calculates how many shares (of stocks, ETFs, etc.) you need to sell to take advantage of the [tax free amount for capital gains](https://de.wikipedia.org/wiki/Sparer-Pauschbetrag) as regulated in the german income tax law. A [live demo](https://timotaglieber.de/sparerpauschbetrag-durch-etf-verkauf-ausnutzen/) is available.
 
 ## Usage
 
