@@ -25,6 +25,7 @@ const sharesSlice = createSlice({
   reducers: {
     add(state) {
       state.before.push({
+        // TODO: remove dummy data
         date: '2022-08-27',
         amountPurchased: 30,
         price: 81.67,
