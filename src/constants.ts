@@ -1,9 +1,27 @@
+export const CURRENT_YEAR = new Date().getFullYear();
+
 export const SHARE_DECIMAL_PLACES = 4;
 export const CURRENCY_DECIMAL_PLACES = 2;
 
 // https://de.wikipedia.org/wiki/Sparer-Pauschbetrag
-export const TAX_FREE_AMOUNT_SINGLE = 801;
-export const TAX_FREE_AMOUNT_DOUBLE = 1602;
+const taxFreeAmountsForYear: {
+  [key: number]: { single: number; double: number };
+} = {
+  2022: {
+    single: 801,
+    double: 1602,
+  },
+  2023: {
+    single: 1000,
+    double: 2000,
+  },
+};
+
+const taxFreeAmounts =
+  taxFreeAmountsForYear[CURRENT_YEAR] || taxFreeAmountsForYear[2023];
+
+export const TAX_FREE_AMOUNT_SINGLE = taxFreeAmounts.single;
+export const TAX_FREE_AMOUNT_DOUBLE = taxFreeAmounts.double;
 
 /*
  * Capital yields tax only applies to a certain percentage of the profits from

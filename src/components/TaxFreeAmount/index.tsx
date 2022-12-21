@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { actions } from '../../redux/taxes/reducer';
 import {
+  CURRENT_YEAR,
   TAX_FREE_AMOUNT_SINGLE,
   TAX_FREE_AMOUNT_DOUBLE,
 } from '../../constants';
 import classNames from './TaxFreeAmount.module.css';
 
-const currentYear = new Date().getFullYear();
 const isValid = (changedValue: number) =>
   changedValue >= 0 && changedValue <= TAX_FREE_AMOUNT_DOUBLE;
 
@@ -35,10 +35,14 @@ const TaxFreeAmount = () => {
       dispatch(actions.setTaxFreeAmount(changeEvent.currentTarget.value));
     }
   };
+
   return (
     <div>
       <p>
-        {t('taxes.tax_free_amount.remaining_amount', { currentYear })}&nbsp;
+        {t('taxes.tax_free_amount.remaining_amount', {
+          currentYear: CURRENT_YEAR,
+        })}
+        &nbsp;
         <input
           className={classNames.Input}
           type="number"
