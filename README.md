@@ -20,6 +20,6 @@ A React app that calculates how many shares (of stocks, ETFs, etc.) you need to 
 
 ## Caveats
 
- * Everything this app does is hardcoded for the specific income tax situation in Germany in the year 2022. You can find the tax rates etc. in `src/constants.ts`.
+ * Everything this app does is hardcoded for the specific income tax situation in Germany starting with the year 2022. You can find the tax rates etc. in `src/constants.ts`.
  * The difference between bid and ask price (spread) is not considered by this app.
- * The strategy this app employs is to approximate but not exceed the tax free amount (Sparerpauschbetrag).
+ * The strategy this app employs is to approximate but not exceed the tax free amount (Sparerpauschbetrag) when selling shares. It's possible that going slightly over the tax free amount is actually more profitable, the author has not done the math on that.
