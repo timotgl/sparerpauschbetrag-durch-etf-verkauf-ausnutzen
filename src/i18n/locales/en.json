@@ -1,6 +1,8 @@
 {
   "app": {
-    "title": "Optimally capitalize on tax-free allowance by selling shares"
+    "title": "Optimally capitalize on tax-free allowance by selling shares",
+    "repo_url_label": "GitHub repo",
+    "author_homepage_url_label": "Author's homepage"
   },
   "switch_language": {
     "prompt": "Language:",

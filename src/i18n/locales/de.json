@@ -1,6 +1,8 @@
 {
   "app": {
-    "title": "Sparer-Pauschbetrag durch Wertpapierverkauf optimal ausnutzen"
+    "title": "Sparer-Pauschbetrag durch Wertpapierverkauf optimal ausnutzen",
+    "repo_url_label": "GitHub repo",
+    "author_homepage_url_label": "Homepage des Autors"
   },
   "switch_language": {
     "prompt": "Sprache:",

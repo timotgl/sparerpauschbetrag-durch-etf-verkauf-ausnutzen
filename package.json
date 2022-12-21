@@ -3,6 +3,15 @@
   "homepage": "https://timotaglieber.de/sparerpauschbetrag-durch-etf-verkauf-ausnutzen",
   "version": "1",
   "private": true,
+  "author": {
+    "name": "Timo Taglieber",
+    "email": "github@timotaglieber.de",
+    "url": "https://timotaglieber.de/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/timotgl/sparerpauschbetrag-durch-etf-verkauf-ausnutzen.git"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "1.9.1",
     "@types/node": "18.11.17",
