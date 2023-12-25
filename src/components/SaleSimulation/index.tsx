@@ -13,6 +13,7 @@ import {
   STOCKS_TAX_EXEMPTION_FACTOR,
 } from '../../constants';
 import { taxCapitalYields } from '../../utils';
+import classNames from './SaleSimulation.module.css';
 
 const SaleSimulation = () => {
   const [t] = useTranslation();
@@ -30,12 +31,17 @@ const SaleSimulation = () => {
         {t('sale_simulation.optimal_profit')} EUR{' '}
         {optimalProfit.toFixed(CURRENCY_DECIMAL_PLACES)}
       </p>
-      <p>
-        <strong>
-          {t('sale_simulation.optimal_amount_shares')}{' '}
-          {saleSimulationResult.numSharesToSell}
-        </strong>
-      </p>
+      <div className={classNames.OptimalAmount}>
+        <p>
+          <strong>
+            {t('sale_simulation.optimal_amount_shares')}{' '}
+            {saleSimulationResult.numSharesToSell}
+          </strong>
+        </p>
+        <p className={classNames.Warning}>
+          {saleSimulationResult.fractionedSharesWarning}
+        </p>
+      </div>
       <p>
         {t('sale_simulation.sale_value')} EUR{' '}
         {saleValue.toFixed(CURRENCY_DECIMAL_PLACES)}
@@ -67,7 +73,8 @@ const SaleSimulation = () => {
         {t('sale_simulation.taxes_saved')} EUR{' '}
         {taxCapitalYields(taxFreeAmountExhausted, churchTaxRate).toFixed(
           CURRENCY_DECIMAL_PLACES
-        )}<br />
+        )}
+        <br />
         <small>{t('sale_simulation.taxes_saved_disclaimer')}</small>
       </p>
     </div>

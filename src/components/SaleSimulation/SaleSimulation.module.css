@@ -1,0 +1,9 @@
+.OptimalAmount {
+  padding-left: 14px;
+  border: 1px dotted #00d200;
+  border-radius: 4px;
+}
+
+.Warning {
+  font-size: smaller;
+}
