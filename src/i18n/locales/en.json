@@ -30,13 +30,17 @@
   },
   "shares": {
     "heading": "Shares in depot",
+    "import_file_button_label": "Import from CSV file",
     "total_value": "shares with a total value of",
     "trade_date": "Trade date",
     "amount_purchased": "Shares purchased",
     "amount_sold": "sold",
     "amount_left": "remaining",
     "execution_rate": "Execution rate",
-    "simulation_outcome": "Simulation outcome"
+    "simulation_outcome": "Simulation outcome",
+    "errors": {
+      "import_only_one_file": "Please select exactly one file only."
+    }
   },
   "prices": {
     "current_bid_price": "Current share price EUR:"

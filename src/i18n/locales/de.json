@@ -30,13 +30,17 @@
   },
   "shares": {
     "heading": "Anteile im Depot",
+    "import_file_button_label": "Aus CSV-Datei importieren",
     "total_value": "Anteile im Wert von",
     "trade_date": "Schlusstag",
     "amount_purchased": "Anteile gekauft",
     "amount_sold": "verkauft",
     "amount_left": "verbleibend",
     "execution_rate": "Ausführungskurs",
-    "simulation_outcome": "Ergebnis Simulation"
+    "simulation_outcome": "Ergebnis Simulation",
+    "errors": {
+      "import_only_one_file": "Bitte nur genau eine Datei auswählen."
+    }
   },
   "prices": {
     "current_bid_price": "Aktueller Wertpapierpreis EUR:"

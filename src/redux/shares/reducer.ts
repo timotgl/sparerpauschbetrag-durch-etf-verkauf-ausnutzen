@@ -23,14 +23,8 @@ const sharesSlice = createSlice({
   name: 'shares',
   initialState,
   reducers: {
-    add(state) {
-      state.before.push({
-        // TODO: remove dummy data
-        date: '2022-08-27',
-        amountPurchased: 30,
-        price: 81.67,
-        amountSold: 0,
-      });
+    replace(state, action) {
+      state.before = action.payload;
     },
   },
 });
