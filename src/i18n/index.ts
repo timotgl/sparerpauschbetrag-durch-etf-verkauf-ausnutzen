@@ -7,14 +7,14 @@ import locale_en_US_translatons from './locales/en.json';
 export const locale_de_DE = 'de-DE';
 export const locale_en_US = 'en-US';
 
-export const locales = [locale_en_US, locale_de_DE];
+export const locales = [locale_de_DE, locale_en_US];
 
 const options: InitOptions = {
   resources: {
-    'en-US': { translation: locale_en_US_translatons },
-    'de-DE': { translation: locale_de_DE_translations },
+    [locale_en_US]: { translation: locale_en_US_translatons },
+    [locale_de_DE]: { translation: locale_de_DE_translations },
   },
-  lng: 'en-US',
+  lng: locale_de_DE,
   fallbackLng: false,
   interpolation: {
     escapeValue: false,
