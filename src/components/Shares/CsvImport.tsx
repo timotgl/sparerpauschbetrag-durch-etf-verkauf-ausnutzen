@@ -6,7 +6,7 @@ import { readFileAsText, readSharesFromCsvString } from '../../utils';
 import { useAppDispatch } from '../../redux/hooks';
 import { actions } from '../../redux/shares/reducer';
 
-const CsvImport = ({}) => {
+const CsvImport = () => {
   const [t] = useTranslation();
   const dispatch = useAppDispatch();
 
