@@ -46,6 +46,9 @@
     "current_bid_price": "Current share price EUR:"
   },
   "sale_simulation": {
+    "no_fractions": "None of the positions will be fractioned.",
+    "fractioned_shares_warning": "Warning: The position with {{amount}} shares bought at {{originalPrice}} EUR on {{purchaseDate}} will be reduced to {{reducedAmount}} shares. Following FIFO, your next sale will start with this position.",
+    "outcome_message": "{{amount}} shares sold with a profit of EUR {{profit}}. {{reducedAmount}} shares are left.",
     "heading": "FIFO sale and re-buy simulation",
     "optimal_profit": "Optimal profit:",
     "optimal_amount_shares": "Optimal amount of shares to sell:",

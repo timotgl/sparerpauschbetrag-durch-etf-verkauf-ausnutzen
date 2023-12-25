@@ -46,6 +46,9 @@
     "current_bid_price": "Aktueller Wertpapierpreis EUR:"
   },
   "sale_simulation": {
+    "no_fractions": "Keine der Positionen wird in Bruchstücke zerfallen.",
+    "fractioned_shares_warning": "Achtung: Die Position mit {{amount}} Anteilen (gekauft {{purchaseDate}} mit Ausführungskurs EUR {{originalPrice}}) wird reduziert auf {{reducedAmount}} Anteile. Nach dem FIFO-Prinzip beginnt der nächste Verkauf mit dieser Position.",
+    "outcome_message": "{{amount}} Anteile verkauft mit einem Gewinn von EUR {{profit}}. {{reducedAmount}} Anteile bleiben übrig.",
     "heading": "FIFO Simulation Verkauf und Wiedereinkauf",
     "optimal_profit": "Zu erzielender, optimaler Gewinn:",
     "optimal_amount_shares": "Optimale Anzahl zu verkaufende Anteile:",
