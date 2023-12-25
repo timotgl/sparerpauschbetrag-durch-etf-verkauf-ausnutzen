@@ -31,6 +31,16 @@
   "shares": {
     "heading": "Shares in depot",
     "import_file_button_label": "Import from CSV file",
+    "csv_format_heading": "CSV format restrictions",
+    "csv_format_restrictions": {
+      "no_heading": "No heading row, every line must be a purchase position.",
+      "lines_order": "Lines must be ordered from oldest to most recent purchase (due to FIFO). First line in CSV file = oldest purchase.",
+      "separator": "Semicolon (;) as value separator.",
+      "no_string_delim": "No string delimiter",
+      "decimal_separator": "Period (.) as decimal separator",
+      "order": "Exact order of values must be: <purchase date>;<amount purchased>;<amount sold>;<original price in EUR>. Do not omit <amount sold>, enter 0.0000 if none of the shares have been sold.",
+      "example": "Example line: 2023-12-18;2.1234;1.0000;12.34"
+    },
     "total_value": "shares with a total value of",
     "trade_date": "Trade date",
     "amount_purchased": "Shares purchased",

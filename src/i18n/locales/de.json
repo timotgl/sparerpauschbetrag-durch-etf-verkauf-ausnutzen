@@ -31,6 +31,16 @@
   "shares": {
     "heading": "Anteile im Depot",
     "import_file_button_label": "Aus CSV-Datei importieren",
+    "csv_format_heading": "CSV Formatierungsbeschränkungen",
+    "csv_format_restrictions": {
+      "no_heading": "Keine Spaltenüberschriften, jede Zeile sollte eine gekaufte Position sein.",
+      "lines_order": "Die Zeilen sollten von alt nach neu sortiert sein (wegen to FIFO). Erste Zeile in der CSV-Datei = ältester Kauf",
+      "separator": "Semikolon (;) als Trennzeichen",
+      "no_string_delim": "Kein Trennzeichen für Zeichenketten",
+      "decimal_separator": "Punkt (.) as Dezimal-Trennzeichen",
+      "order": "Exakte erwartete Reihenfolge der Werte: <Kaufdatum>;<Anzahl gekaufte Anteile>;<Anzahl verkaufte Anteile>;<Ausführungspreis in EUR>. Den Wert für <Anzahl verkaufte Anteile> nicht auslassen, 0.0000 angeben wenn von einer Position noch keine Anteile verkauft wurden.",
+      "example": "Beispiel für eine Zeile: 2023-12-18;2.1234;1.0000;12.34"
+    },
     "total_value": "Anteile im Wert von",
     "trade_date": "Schlusstag",
     "amount_purchased": "Anteile gekauft",
